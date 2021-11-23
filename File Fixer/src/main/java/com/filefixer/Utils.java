@@ -16,13 +16,13 @@ public class Utils {
    *     upload, 3 = random)
    */
   public static int naming_convention(File pdf) {
-    String old_convention = "^([0-9]+)-([0-9]+)_(.+)_([0-9]+)_([0-9]+).pdf$";
+    //String old_convention = "^([0-9]+)-([0-9]+)_(.+)_([0-9]+)_([0-9]+).pdf$";
     String new_convention = "^([0-9]+)-([0-9]+)_([a-zA-Z-'_]+)_([0-9]+)_(.+).pdf$";
     String upload_convention = "^([a-zA-Z+\\s]+)_([0-9]+)_assignsubmission_file_(.+).pdf$";
 
-    String[] naming_conventions = {old_convention, new_convention, upload_convention};
+    String[] naming_conventions = {new_convention, upload_convention};
 
-    for (int index = 0; index < 3; index++) {
+    for (int index = 0; index < 2; index++) {
       Pattern pattern = Pattern.compile(naming_conventions[index]);
       if (pattern.matcher(pdf.getName()).matches()) return index;
     }

@@ -191,7 +191,7 @@ public class FileFixer {
    */
   private static void removeCorrectlyNamedFiles(List<File> pdfList) {
     for (File pdf : pdfList) {
-      if (Utils.naming_convention(pdf) == 2) {
+      if (Utils.naming_convention(pdf) == 1) {
         try {
           File outputFile =
               new File(

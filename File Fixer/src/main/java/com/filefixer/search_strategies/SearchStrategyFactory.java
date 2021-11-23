@@ -16,8 +16,7 @@ public class SearchStrategyFactory {
      */
     public SearchStrategy getSearchStrategy(File pdf) {
         return switch (Utils.naming_convention(pdf)) {
-            case 1 -> new NewConventionStrategy();
-            case 0 -> new OldConventionStrategy();
+            case 0 -> new NewConventionStrategy();
             default -> new RandomStrategy();
         };
     }
